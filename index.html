@@ -49,18 +49,31 @@
         </div>
       </div>
 
-      <!-- Identity & Headline -->
-      <div class="pt-2">
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-          Ahmed Abdelgawad
-        </h1>
-        <p class="text-lg text-zinc-400 font-medium mt-1">
-          Full-Stack Software Engineer & Systems Designer
-        </p>
+      <!-- Identity & Avatar Row -->
+      <div class="flex items-start gap-5 pt-2">
+        <div class="relative shrink-0">
+          <img 
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&h=240&q=80" 
+            alt="Ahmed Abdelgawad" 
+            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-zinc-700/80 shadow-lg"
+          >
+          <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#09090b] flex items-center justify-center">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+          </span>
+        </div>
+
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            Ahmed Abdelgawad
+          </h1>
+          <p class="text-sm sm:text-base text-zinc-400 font-medium mt-1">
+            Full-Stack Software Engineer & Systems Designer
+          </p>
+        </div>
       </div>
 
       <!-- Human Narrative Bio -->
-      <p class="text-zinc-300 text-base leading-relaxed max-w-2xl">
+      <p class="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-2xl">
         I engineer high-throughput web applications, edge architectures, and developer tooling. Passionate about clean code, low-latency APIs, and human-centered design. Currently crafting bespoke software for fast-moving startups and contributing to open-source systems.
       </p>
 
@@ -103,7 +116,7 @@
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
           <h2 class="text-xs uppercase tracking-widest font-mono text-zinc-400 font-semibold">Selected Projects</h2>
-          <p class="text-sm text-zinc-500 mt-0.5">Click any project to read the detailed engineering breakdown.</p>
+          <p class="text-xs sm:text-sm text-zinc-500 mt-0.5">Click any project to read the detailed engineering case study.</p>
         </div>
 
         <!-- Filter Buttons -->
@@ -115,95 +128,155 @@
         </div>
       </div>
 
-      <!-- Project Cards List -->
-      <div class="space-y-4">
+      <!-- Project Cards List (Visual Rich Cards) -->
+      <div class="space-y-8">
 
         <!-- Project 1: Hyperion Cloud -->
-        <article data-category="systems fullstack" class="project-item folio-card rounded-xl p-6 group cursor-pointer open-case-study" data-study="hyperion">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-            <h3 class="text-base font-semibold text-white group-hover:text-zinc-200 flex items-center gap-2">
-              Hyperion Cloud
-              <span class="text-zinc-500 font-mono text-xs font-normal">→ Case Study</span>
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">2025 • Lead Architect</span>
+        <article data-category="systems fullstack" class="project-item folio-card rounded-2xl overflow-hidden group cursor-pointer open-case-study" data-study="hyperion">
+          <!-- Project Preview Image -->
+          <div class="w-full h-52 sm:h-64 overflow-hidden relative bg-zinc-950 border-b border-zinc-800/80">
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" 
+              alt="Hyperion Cloud Dashboard" 
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121215] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-black/60 backdrop-blur-md text-zinc-300 border border-white/10">
+              <span>● Production Deployment</span>
+            </div>
           </div>
 
-          <p class="mt-2 text-sm text-zinc-400 leading-relaxed">
-            High-throughput edge orchestration engine processing 40M+ events daily with sub-20ms P99 latency and Raft consensus replication.
-          </p>
+          <div class="p-6">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <h3 class="text-base font-semibold text-white group-hover:text-zinc-200 flex items-center gap-2">
+                Hyperion Cloud
+                <span class="text-zinc-500 font-mono text-xs font-normal">→ Case Study</span>
+              </h3>
+              <span class="text-xs font-mono text-zinc-500">2025 • Lead Architect</span>
+            </div>
 
-          <div class="mt-4 flex flex-wrap items-center gap-2">
-            <span class="tag-badge">Go</span>
-            <span class="tag-badge">Rust</span>
-            <span class="tag-badge">Raft</span>
-            <span class="tag-badge">Docker</span>
-            <span class="tag-badge text-emerald-400/90 border-emerald-500/20 bg-emerald-500/5">-78% Latency</span>
+            <p class="mt-2 text-sm text-zinc-400 leading-relaxed">
+              High-throughput edge orchestration engine processing 40M+ events daily with sub-20ms P99 latency and Raft consensus replication.
+            </p>
+
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <span class="tag-badge">Go</span>
+              <span class="tag-badge">Rust</span>
+              <span class="tag-badge">Raft</span>
+              <span class="tag-badge">Docker</span>
+              <span class="tag-badge text-emerald-400/90 border-emerald-500/20 bg-emerald-500/5">-78% Latency</span>
+            </div>
           </div>
         </article>
 
         <!-- Project 2: CanvasOS -->
-        <article data-category="fullstack" class="project-item folio-card rounded-xl p-6 group cursor-pointer open-case-study" data-study="canvas-os">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-            <h3 class="text-base font-semibold text-white group-hover:text-zinc-200 flex items-center gap-2">
-              CanvasOS
-              <span class="text-zinc-500 font-mono text-xs font-normal">→ Case Study</span>
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">2024 • Frontend Lead</span>
+        <article data-category="fullstack" class="project-item folio-card rounded-2xl overflow-hidden group cursor-pointer open-case-study" data-study="canvas-os">
+          <!-- Project Preview Image -->
+          <div class="w-full h-52 sm:h-64 overflow-hidden relative bg-zinc-950 border-b border-zinc-800/80">
+            <img 
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" 
+              alt="CanvasOS Spatial Diagram" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121215] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-black/60 backdrop-blur-md text-zinc-300 border border-white/10">
+              <span>● WebGL Canvas Engine</span>
+            </div>
           </div>
 
-          <p class="mt-2 text-sm text-zinc-400 leading-relaxed">
-            Infinite spatial canvas engine rendering 150,000+ interactive vector nodes at 60fps via WebGL with peer-to-peer CRDT state synchronization.
-          </p>
+          <div class="p-6">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <h3 class="text-base font-semibold text-white group-hover:text-zinc-200 flex items-center gap-2">
+                CanvasOS
+                <span class="text-zinc-500 font-mono text-xs font-normal">→ Case Study</span>
+              </h3>
+              <span class="text-xs font-mono text-zinc-500">2024 • Frontend Lead</span>
+            </div>
 
-          <div class="mt-4 flex flex-wrap items-center gap-2">
-            <span class="tag-badge">TypeScript</span>
-            <span class="tag-badge">WebGL</span>
-            <span class="tag-badge">Yjs / CRDT</span>
-            <span class="tag-badge text-emerald-400/90 border-emerald-500/20 bg-emerald-500/5">60 FPS Render</span>
+            <p class="mt-2 text-sm text-zinc-400 leading-relaxed">
+              Infinite spatial canvas engine rendering 150,000+ interactive vector nodes at 60fps via WebGL with peer-to-peer CRDT state synchronization.
+            </p>
+
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <span class="tag-badge">TypeScript</span>
+              <span class="tag-badge">WebGL</span>
+              <span class="tag-badge">Yjs / CRDT</span>
+              <span class="tag-badge text-emerald-400/90 border-emerald-500/20 bg-emerald-500/5">60 FPS Render</span>
+            </div>
           </div>
         </article>
 
         <!-- Project 3: StrataDB Explorer -->
-        <article data-category="oss systems" class="project-item folio-card rounded-xl p-6 group cursor-pointer open-case-study" data-study="strata-db">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-            <h3 class="text-base font-semibold text-white group-hover:text-zinc-200 flex items-center gap-2">
-              StrataDB Explorer
-              <span class="text-zinc-500 font-mono text-xs font-normal">→ Case Study</span>
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">2024 • Open Source</span>
+        <article data-category="oss systems" class="project-item folio-card rounded-2xl overflow-hidden group cursor-pointer open-case-study" data-study="strata-db">
+          <!-- Project Preview Image -->
+          <div class="w-full h-52 sm:h-64 overflow-hidden relative bg-zinc-950 border-b border-zinc-800/80">
+            <img 
+              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" 
+              alt="StrataDB Matrix Visualization" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121215] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-black/60 backdrop-blur-md text-amber-300 border border-amber-500/20">
+              <span>★ 8,400+ GitHub Stars</span>
+            </div>
           </div>
 
-          <p class="mt-2 text-sm text-zinc-400 leading-relaxed">
-            Lightweight cross-platform desktop profiler for high-dimensional vector embeddings, HNSW graph visualization, and cosine similarity debugging.
-          </p>
+          <div class="p-6">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <h3 class="text-base font-semibold text-white group-hover:text-zinc-200 flex items-center gap-2">
+                StrataDB Explorer
+                <span class="text-zinc-500 font-mono text-xs font-normal">→ Case Study</span>
+              </h3>
+              <span class="text-xs font-mono text-zinc-500">2024 • Open Source</span>
+            </div>
 
-          <div class="mt-4 flex flex-wrap items-center gap-2">
-            <span class="tag-badge">Tauri</span>
-            <span class="tag-badge">Rust</span>
-            <span class="tag-badge">React</span>
-            <span class="tag-badge text-amber-400/90 border-amber-500/20 bg-amber-500/5">⭐ 8.4k Stars</span>
+            <p class="mt-2 text-sm text-zinc-400 leading-relaxed">
+              Lightweight cross-platform desktop profiler for high-dimensional vector embeddings, HNSW graph visualization, and cosine similarity debugging.
+            </p>
+
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <span class="tag-badge">Tauri</span>
+              <span class="tag-badge">Rust</span>
+              <span class="tag-badge">React</span>
+              <span class="tag-badge text-amber-400/90 border-amber-500/20 bg-amber-500/5">Open Source</span>
+            </div>
           </div>
         </article>
 
         <!-- Project 4: Lumina Treasury -->
-        <article data-category="fullstack systems" class="project-item folio-card rounded-xl p-6 group cursor-pointer open-case-study" data-study="lumina-fin">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-            <h3 class="text-base font-semibold text-white group-hover:text-zinc-200 flex items-center gap-2">
-              Lumina Treasury
-              <span class="text-zinc-500 font-mono text-xs font-normal">→ Case Study</span>
-            </h3>
-            <span class="text-xs font-mono text-zinc-500">2023 • Senior Engineer</span>
+        <article data-category="fullstack systems" class="project-item folio-card rounded-2xl overflow-hidden group cursor-pointer open-case-study" data-study="lumina-fin">
+          <!-- Project Preview Image -->
+          <div class="w-full h-52 sm:h-64 overflow-hidden relative bg-zinc-950 border-b border-zinc-800/80">
+            <img 
+              src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80" 
+              alt="Lumina Treasury Payout System" 
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121215] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-black/60 backdrop-blur-md text-emerald-300 border border-emerald-500/20">
+              <span>● $180M+ Processed</span>
+            </div>
           </div>
 
-          <p class="mt-2 text-sm text-zinc-400 leading-relaxed">
-            Automated payout and reconciliation infrastructure with immutable double-entry ledger verification, handling $180M+ volume safely.
-          </p>
+          <div class="p-6">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <h3 class="text-base font-semibold text-white group-hover:text-zinc-200 flex items-center gap-2">
+                Lumina Treasury
+                <span class="text-zinc-500 font-mono text-xs font-normal">→ Case Study</span>
+              </h3>
+              <span class="text-xs font-mono text-zinc-500">2023 • Senior Engineer</span>
+            </div>
 
-          <div class="mt-4 flex flex-wrap items-center gap-2">
-            <span class="tag-badge">Next.js</span>
-            <span class="tag-badge">PostgreSQL</span>
-            <span class="tag-badge">Stripe API</span>
-            <span class="tag-badge text-emerald-400/90 border-emerald-500/20 bg-emerald-500/5">$180M+ Volume</span>
+            <p class="mt-2 text-sm text-zinc-400 leading-relaxed">
+              Automated payout and reconciliation infrastructure with immutable double-entry ledger verification, handling $180M+ volume safely.
+            </p>
+
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <span class="tag-badge">Next.js</span>
+              <span class="tag-badge">PostgreSQL</span>
+              <span class="tag-badge">Stripe API</span>
+              <span class="tag-badge text-emerald-400/90 border-emerald-500/20 bg-emerald-500/5">SOC-2 Audited</span>
+            </div>
           </div>
         </article>
 
@@ -216,7 +289,7 @@
       
       <div class="mb-8">
         <h2 class="text-xs uppercase tracking-widest font-mono text-zinc-400 font-semibold">Experience</h2>
-        <p class="text-sm text-zinc-500 mt-0.5">Where I've contributed and built products over the years.</p>
+        <p class="text-xs sm:text-sm text-zinc-500 mt-0.5">Where I've contributed and built products over the years.</p>
       </div>
 
       <div class="space-y-8 font-sans">
@@ -260,7 +333,7 @@
       
       <div class="mb-6">
         <h2 class="text-xs uppercase tracking-widest font-mono text-zinc-400 font-semibold">Technical Arsenal</h2>
-        <p class="text-sm text-zinc-500 mt-0.5">Languages, tools, and environments I work with daily.</p>
+        <p class="text-xs sm:text-sm text-zinc-500 mt-0.5">Languages, tools, and environments I work with daily.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
@@ -293,7 +366,7 @@
             <span class="tag-badge">PostgreSQL</span>
             <span class="tag-badge">Redis</span>
             <span class="tag-badge">SQLite</span>
-            <span class="tag-badge">Vector DBs (Qdrant)</span>
+            <span class="tag-badge">Vector DBs</span>
           </div>
         </div>
 
@@ -316,7 +389,7 @@
       
       <div class="mb-6">
         <h2 class="text-xs uppercase tracking-widest font-mono text-zinc-400 font-semibold">Writings & Thoughts</h2>
-        <p class="text-sm text-zinc-500 mt-0.5">Deep dives into software architecture, edge computing, and system reliability.</p>
+        <p class="text-xs sm:text-sm text-zinc-500 mt-0.5">Deep dives into software architecture, edge computing, and system reliability.</p>
       </div>
 
       <div class="space-y-4">
@@ -358,7 +431,7 @@
     <!-- ================= FOOTER / CONTACT CALLOUT ================= -->
     <footer class="pt-12 text-zinc-400 space-y-6">
       
-      <div class="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800">
+      <div class="p-6 sm:p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800">
         <h3 class="text-base font-semibold text-white">Let's build something enduring.</h3>
         <p class="text-sm text-zinc-400 mt-1 leading-relaxed">
           I am currently accepting select contract engagements, architectural advisory, and technical consulting for 2026. If you have an interesting problem to solve, let's talk.
@@ -395,6 +468,11 @@
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
+
+      <!-- Featured Image Banner in Modal -->
+      <div class="w-full h-48 sm:h-64 rounded-xl overflow-hidden mb-6 bg-zinc-950 border border-zinc-800">
+        <img id="modalImage" src="" alt="Project Visual" class="w-full h-full object-cover">
+      </div>
 
       <!-- Modal Content Header -->
       <div class="space-y-1">

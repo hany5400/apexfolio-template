@@ -40,3 +40,4 @@ Open `index.html` in your favorite code editor:
 This template is licensed for **commercial and personal use**. You can use it for your personal site or client projects. Reselling this raw template code as a standalone template is prohibited.
 
 Crafted by **Ahmed Studio**.
+

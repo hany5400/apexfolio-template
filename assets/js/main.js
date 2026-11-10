@@ -4,7 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Live Local Time Display (Hallmark of elite engineer portfolios)
+  // 1. Live Local Time Display
   const localTimeEl = document.getElementById('localTime');
   function updateTime() {
     if (!localTimeEl) return;
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Project Category Filtering
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-item');
-  const projectCount = document.getElementById('projectCount');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -33,26 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('bg-white', 'text-black', 'border-white');
 
       // Filter projects
-      let visibleCount = 0;
       projectCards.forEach(card => {
         const cardCat = card.getAttribute('data-category');
         if (category === 'all' || cardCat.includes(category)) {
           card.classList.remove('hidden');
-          visibleCount++;
         } else {
           card.classList.add('hidden');
         }
       });
-
-      if (projectCount) {
-        projectCount.textContent = `${visibleCount} projects`;
-      }
     });
   });
 
   // 3. Project Case Study Modal Data & Handlers
   const projectModal = document.getElementById('projectModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
+  const modalImage = document.getElementById('modalImage');
   const modalTitle = document.getElementById('modalTitle');
   const modalTagline = document.getElementById('modalTagline');
   const modalYear = document.getElementById('modalYear');
@@ -63,15 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalLiveLink = document.getElementById('modalLiveLink');
   const modalGithubLink = document.getElementById('modalGithubLink');
 
-  // Case Studies Database
+  // Case Studies Database with Rich Visuals
   const caseStudies = {
     'hyperion': {
       title: 'Hyperion Cloud',
       tagline: 'High-throughput edge orchestration engine for microservices.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
       year: '2025',
       role: 'Lead Architect',
       overview: 'Engineered a decentralized gateway handling 40M+ daily events. Migrated existing monolithic state machines to distributed Raft consensus nodes, reducing single-point failures to zero.',
-      metrics: ['-78% P99 Latency (down to 18ms)', 'Zero downtime across 14 deployments', 'Saved $45k/mo on AWS compute'],
+      metrics: ['-78% P99 Latency (down to 18ms)', 'Zero downtime across 14 deployments', 'Saved $45k/mo on AWS compute spend'],
       stack: ['Go', 'Rust', 'Raft Consensus', 'Docker', 'Prometheus'],
       live: 'https://example.com/hyperion',
       github: 'https://github.com/example/hyperion'
@@ -79,8 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
     'canvas-os': {
       title: 'CanvasOS',
       tagline: 'Spatial infinite canvas for product design & engineering diagrams.',
+      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
       year: '2024',
-      role: 'Founding Frontend Engineer',
+      role: 'Frontend Lead',
       overview: 'Built a 60fps WebGL/Canvas rendering pipeline capable of displaying over 150,000 interactive nodes simultaneously without dropping frames. Designed custom CRDT multiplayer sync engine.',
       metrics: ['60fps smooth pan/zoom on 100k nodes', 'Sub-15ms collaborative websocket sync', 'Featured on Hacker News frontpage'],
       stack: ['TypeScript', 'WebGL', 'Pixi.js', 'CRDTs / Yjs', 'TailwindCSS'],
@@ -90,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'strata-db': {
       title: 'StrataDB Explorer',
       tagline: 'Lightweight desktop GUI & query profiler for vector databases.',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
       year: '2024',
       role: 'Creator & Maintainer',
       overview: 'An open-source desktop tool built for AI engineers to visualize high-dimensional vector embeddings, debug cosine distance anomalies, and profile HNSW indexing pipelines in real time.',
@@ -101,8 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     'lumina-fin': {
       title: 'Lumina Treasury',
       tagline: 'Next-generation treasury and automated payout management platform.',
+      image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80',
       year: '2023',
-      role: 'Senior Full-Stack Engineer',
+      role: 'Senior Engineer',
       overview: 'Re-architected payment reconciliation microservices connecting Stripe, Wise, and SWIFT rails. Implemented idempotent transactional guarantees with dual-ledger audit verification.',
       metrics: ['$180M+ processed without a ledger discrepancy', 'Audit pass with Big 4 compliance firm', 'Automated 92% of manual reconciliation'],
       stack: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe Connect', 'Redis'],
@@ -118,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = caseStudies[studyId];
       if (!data) return;
 
+      if (modalImage) modalImage.src = data.image;
       modalTitle.textContent = data.title;
       modalTagline.textContent = data.tagline;
       modalYear.textContent = data.year;
@@ -167,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeModal();
   });
 
-  // 4. Copy Email to Clipboard with Refined Feedback
+  // 4. Copy Email with Feedback
   const copyEmailBtn = document.getElementById('copyEmailBtn');
   const copyFeedback = document.getElementById('copyFeedback');
   const emailToCopy = 'ahmed.dev@example.com';

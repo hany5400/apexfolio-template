@@ -12,3 +12,4 @@ Subject to the terms of this license, you are granted a non-exclusive, perpetual
 - You may NOT make the raw template source code publicly available in open repositories without substantial personal project content added.
 
 For questions or support, contact Ahmed Studio.
+
