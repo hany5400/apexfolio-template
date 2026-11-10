@@ -22,8 +22,8 @@ Zero clunky dependencies. No AI buzzword gradients. Just pure, razor-sharp craft
 
 ### 1. Update Personal Info
 Open `index.html` in your favorite code editor:
-* Search for `Ahmed Abdelgawad` and replace with your name.
-* Update the bio, location (`Cairo, EG`), and social media links.
+* Search for `Alex Vance` and replace with your name.
+* Update the bio, location (`San Francisco, CA`), and social media links.
 * In `assets/js/main.js`, update `emailToCopy = 'your.email@example.com'`.
 
 ### 2. Update Projects & Case Studies

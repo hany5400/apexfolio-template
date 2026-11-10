@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Copy Email with Feedback
   const copyEmailBtn = document.getElementById('copyEmailBtn');
   const copyFeedback = document.getElementById('copyFeedback');
-  const emailToCopy = 'ahmed.dev@example.com';
+  const emailToCopy = 'alex.vance@example.com';
 
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
